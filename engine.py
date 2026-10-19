@@ -1,11 +1,7 @@
 from dataclasses import dataclass
-
 from graph import Graph
 from models import Connection, Drone, Zone, ZoneType
-
-
-class SimulationError(Exception):
-    pass
+from errors import SimulationError
 
 
 @dataclass
