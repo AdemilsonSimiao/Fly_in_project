@@ -8,3 +8,7 @@ class ParseError(Exception):
 
 class SimulationError(Exception):
     pass
+
+
+class WindowError(Exception):
+    pass
