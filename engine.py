@@ -13,6 +13,7 @@ class Departure:
 
 
 class Simulation:
+    """Make simulation drones move, zone and connections routes"""
     def __init__(self, graph: Graph, nb_drones: int) -> None:
         self.graph = graph
         self.turn = 0

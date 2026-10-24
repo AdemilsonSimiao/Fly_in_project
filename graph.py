@@ -4,6 +4,7 @@ from parser import MapData
 
 
 class Graph:
+    """Join connection and zones datas to find neighbors"""
     def __init__(self, data: MapData) -> None:
         self.zones: dict[str, Zone] = data.zones
         self.start: Zone = data.start

@@ -3,6 +3,7 @@ from enum import Enum
 
 
 class ZoneType(Enum):
+    """Zones models come by subject"""
     NORMAL = "normal"
     BLOCKED = "blocked"
     RESTRICTED = "restricted"
@@ -11,6 +12,7 @@ class ZoneType(Enum):
 
 @dataclass
 class Zone:
+    """"Variables models to get value"""
     name: str
     x: int
     y: int
@@ -35,11 +37,13 @@ class Zone:
 
 @dataclass
 class Connection:
+    """"Bi-direction connection zones"""
     zone_a: Zone
     zone_b: Zone
     max_link_capacity: int = 1
 
     def other_zone(self, zone: Zone) -> Zone:
+        """Return a single zone"""
         if zone is self.zone_a:
             return self.zone_b
         if zone is self.zone_b:
@@ -49,6 +53,7 @@ class Connection:
 
 @dataclass
 class Drone:
+    """Moviment drones"""
     drone_id: int
     current_zone: Zone | None = None
     current_connection: Connection | None = None

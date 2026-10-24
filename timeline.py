@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-
 from engine import Simulation
 from graph import Graph
 from models import Connection, Zone

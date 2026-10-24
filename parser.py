@@ -13,6 +13,7 @@ class MapData:
 
 
 def read_map_lines(path: str) -> list[tuple[int, str]]:
+    """Return read map lines"""
     lines: list[tuple[int, str]] = []
     try:
         with open(path, encoding="utf-8") as file:
@@ -51,6 +52,7 @@ def split_line(text: str, line_number: int) -> tuple[str, str]:
 
 
 def parse_metadata(text: str, line_number: int) -> dict[str, str]:
+    """Return result key value"""
     text = text.strip()
     result: dict[str, str] = {}
     if not text:
@@ -73,6 +75,7 @@ def parse_metadata(text: str, line_number: int) -> dict[str, str]:
 
 
 def parse_zone(prefix: str, body: str, line_number: int) -> Zone:
+    """Return parse key zone"""
     head, bracket, tail = body.partition("[")
     fields = head.split()
     if len(fields) != 3:
@@ -160,6 +163,7 @@ def parse_connection(
 
 
 def parse_map(path: str) -> MapData:
+    """Returne data map"""
     lines = read_map_lines(path)
     if not lines:
         raise ParseError(None, "map file is empty")
